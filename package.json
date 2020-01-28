@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "UNLICENSED",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
   "dependencies": {
     "balanced-match": "^1.0.0",
     "cors": "^2.8.5",
@@ -16,10 +20,6 @@
   "description": "ddd",
   "devDependencies": {
     "nodemon": "^1.19.1"
-  },
-  "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",

@@ -8,8 +8,9 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-mongoose.connect('mongodb+srv://admin:admin@cluster0-akajg.mongodb.net/test?retryWrites=true&w=majority', { 
-    useMongoClient: true 
+mongoose.connect('mongodb+srv://admin:QSc3jJmUO5efkUXu@cluster0-akajg.mongodb.net/test?retryWrites=true&w=majority', { 
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
 
 app.use((req, res, next)=>{
@@ -24,4 +25,6 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads', 'resiz
 
 app.use(require('./routes'));
 
-server.listen(3333);
+const PORT = process.env.PORT || 3333;
+app.listen(PORT, () => {
+});

@@ -11,6 +11,8 @@ module.exports = {
     },
 
     async store(req, res) {
+        try {
+
         const { author, place, description, hashtags } = req.body;
         const { filename: image } = req.file;
 
@@ -36,5 +38,10 @@ module.exports = {
         req.io.emit('post', post);
         
         return res.json(post);
+    } catch (error) {
+        res.status(400).send({
+          error: `Erro ao realizar busca: ${error}`
+        });
+      };
     }
 };
