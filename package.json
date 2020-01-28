@@ -18,7 +18,8 @@
     "nodemon": "^1.19.1"
   },
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "start": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
