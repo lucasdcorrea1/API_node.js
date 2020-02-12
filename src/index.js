@@ -1,3 +1,4 @@
+require('dotenv/config');
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -8,7 +9,7 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-mongoose.connect('mongodb+srv://admin:QSc3jJmUO5efkUXu@cluster0-akajg.mongodb.net/test?retryWrites=true&w=majority', { 
+mongoose.connect(process.env.DATABASE, { 
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
